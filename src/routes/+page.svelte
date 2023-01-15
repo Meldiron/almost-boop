@@ -146,6 +146,16 @@
 </script>
 
 <div class="max-w-xl mx-auto p-3">
+    <p
+    class="text-center border border-black text-white mb-6 mt-3 rounded-md bg-neutral-800 text-neutral-500 p-4 text-3xl"
+>
+    {#if turn === 'p1'}
+        <span class="font-bold text-green-700">Green Turn</span>
+    {:else}
+        <span class="font-bold text-red-700">Red Turn</span>
+    {/if}
+</p>
+
 	<div class="grid-cols-12 w-full grid gap-2">
 		{#each Object.entries(grid) as [pos, state] (pos)}
 			<button
@@ -165,13 +175,5 @@
 		{/each}
 	</div>
 
-	<p
-		class="text-center border border-black text-white mt-6 rounded-md bg-neutral-800 text-neutral-500 p-4 text-3xl"
-	>
-		{#if turn === 'p1'}
-			<span class="font-bold text-green-700">Green Turn</span>
-		{:else}
-			<span class="font-bold text-red-700">Red Turn</span>
-		{/if}
-	</p>
+
 </div>
