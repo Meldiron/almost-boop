@@ -157,19 +157,21 @@
 </p>
 
 	<div class="grid-cols-12 w-full grid gap-2">
-		{#each Object.entries(grid) as [pos, state] (pos)}
+		{#each Object.entries(grid) as [pos, state], i (pos)}
 			<button
 				on:click={() => onClick(pos)}
 				class="col-span-2 hover:bg-neutral-700 bg-neutral-800 rounded-md border border-black aspect-square flex items-center justify-center"
 			>
 				{#if state === 'p1'}
-					<div class="rounded-full bg-green-800 border border-green-900 w-6 h-6" />
+					<div class="rounded-full bg-green-600 border border-green-900 w-6 h-6" />
 				{:else if state === 'p1-big'}
-					<div class="rounded-full bg-green-600 border border-green-900 w-10 h-10" />
+					<div class="rounded-full bg-green-600 border border-green-900 w-12 h-12" />
 				{:else if state === 'p2'}
-					<div class="rounded-full bg-red-800 border border-red-900 w-6 h-6" />
+					<div class="rounded-full bg-red-600 border border-red-900 w-6 h-6" />
 				{:else if state === 'p2-big'}
-					<div class="rounded-full bg-red-600 border border-red-900 w-10 h-10" />
+					<div class="rounded-full bg-red-600 border border-red-900 w-12 h-12" />
+                    {:else}
+                    <p class="text-neutral-600">{i+1}</p>
 				{/if}
 			</button>
 		{/each}
